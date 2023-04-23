@@ -1,0 +1,30 @@
+--Create a clothing store database
+
+CREATE TABLE clothes( id integer primary key, item text, color text, size text, price integer);
+
+INSERT INTO clothes VALUES (1,"shirt","black", "small", 5);
+INSERT INTO clothes VALUES (2,"shirt","black","medium",5);
+INSERT INTO clothes VALUES (3,"shirt","black","large",5);
+INSERT INTO clothes VALUES (4,"shirt","black","XL",5);
+insert into clothes values (5, "shirt","black","x-small",5);
+insert into clothes values(6,"shirt", "white","x-small",5);
+insert into clothes values(7,"shirt","white","small",5);
+insert into clothes values(8,"shirt","white","medium",5);
+insert into clothes values(9,"shirt","white","large",5);
+insert into clothes values(10,"shirt","white","XL",5);
+insert into clothes values(11,"shirt","grey","x-small",5);
+insert into clothes values(12,"shirt","grey","small",5);
+insert into clothes values(13,"shirt","grey","medium",5);
+insert into clothes values(14,"shirt","grey","large",5);
+insert into clothes values(15,"shirt","grey","XL",5);
+
+--display the database ordered by price.
+SELECt * FROM clothes
+Order BY price;
+
+--what is the avg price of items in the grey section?
+SELECT * AVG(price) "avg grey item price"
+FROM clothes
+where section='grey';
+
+
