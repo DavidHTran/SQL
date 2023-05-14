@@ -1,0 +1,46 @@
+/* Create table about the people and what they do here */
+Create table Gaming_Streamers
+(id INTEGER PRIMARY KEY,
+name TEXT,
+age INTEGER,
+subs INTEGER,
+platform TEXT);
+
+INSERT INTO Gaming_Streamers(name,age,subs,platform)
+VALUES ("Valkyrae",31, 3870000, "Youtube");
+
+INSERT INTO Gaming_Streamers(name,age,subs,platform)
+VALUES ("Sykkuno",31,2890000,"Youtube");
+
+INSERT INTO Gaming_Streamers(name,age,subs,platform)
+VALUES ("Ludwig",27,4690000, "Youtube");
+
+INSERT INTO Gaming_Streamers(name,age,subs,platform)
+VALUES ("Pokimane", 27, 9300000, "Twitch");
+
+INSERT INTO Gaming_Streamers(name,age,subs,platform)
+VALUES ("xQc", 27, 11800000,"Twitch");
+
+INSERT INTO Gaming_Streamers(name,age,subs,platform)
+VALUES ("Shroud","28", 10500000, "Twitch");
+
+Create table Streaming_Platform
+(id INTEGER PRIMARY KEY, title TEXT);
+
+INSERT INTO Streaming_Platform
+VALUES (1, "Twitch");
+
+INSERT INTO Streaming_Platform
+VALUES (2, "Youtube");
+
+INSERT INTO Streaming_Platform
+VALUES (3, "Facebook");
+
+INSERT INTO Streaming_Platform
+VALUES (4, " Dlive");
+
+/*What streaming platform do these Streamer use?*/
+
+SELECT name,platform FROM Gaming_Streamers
+JOIN Streaming_Platform
+ON Gaming_Streamers.platform= Streaming_Platform.title;
